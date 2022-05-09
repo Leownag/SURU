@@ -23,5 +23,11 @@ extension Date {
                 
         return formatter
     }
+    func weekDay() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE"
+        let weekDay = dateFormatter.string(from: self).lowercased()
+        return weekDay
+    }
     
 }

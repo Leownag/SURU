@@ -16,6 +16,9 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var mealLabel: UILabel!
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var soupLabel: UILabel!
+    @IBOutlet weak var noodleLabel: UILabel!
+    @IBOutlet weak var oveallLabel: UILabel!
     
     
     func layoutCell(data: Comment, store: Store) {
@@ -26,6 +29,9 @@ class CommentCell: UITableViewCell {
         mealLabel.text = data.meal
         storeNameLabel.text = store.name
         mainImageView.kf.setImage(with: URL(string: data.mainImage))
+        soupLabel.text = "\(data.contentValue.noodle)"
+     noodleLabel.text = "\(data.contentValue.soup)"
+     oveallLabel.text = "\(data.contentValue.happiness)"
     }
     private func initValueView(on view: UIView, value: Double, color: CGColor) {
         // round view

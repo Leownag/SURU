@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StoreLocaltionCell" customModule="SURU_Leo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fTk-JO-21Q">
+                        <rect key="frame" x="20" y="10.5" width="24" height="23"/>
+                        <color key="tintColor" name="B1"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="fTk-JO-21Q" secondAttribute="height" multiplier="1:1" id="2JK-kD-Gp4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9H-Gj-cha">
+                        <rect key="frame" x="54" y="1.5" width="248" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A9H-Gj-cha" secondAttribute="trailing" constant="10" id="KTA-Pg-0oD"/>
+                    <constraint firstAttribute="bottom" secondItem="fTk-JO-21Q" secondAttribute="bottom" constant="10" id="L52-vP-bgU"/>
+                    <constraint firstItem="A9H-Gj-cha" firstAttribute="leading" secondItem="fTk-JO-21Q" secondAttribute="trailing" constant="10" id="c5c-BO-NxH"/>
+                    <constraint firstItem="fTk-JO-21Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gqd-oM-5jj"/>
+                    <constraint firstItem="A9H-Gj-cha" firstAttribute="centerY" secondItem="fTk-JO-21Q" secondAttribute="centerY" id="vfC-ze-cw5"/>
+                    <constraint firstItem="fTk-JO-21Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="zjx-aX-MXj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconImageView" destination="fTk-JO-21Q" id="3BX-Gn-496"/>
+                <outlet property="label" destination="A9H-Gj-cha" id="Jml-N3-4VF"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="71"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="B1">
+            <color red="0.24699999392032623" green="0.22699999809265137" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -23,13 +23,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYK-zi-Wkm">
-                    <rect key="frame" x="80.5" y="156.5" width="51" height="15"/>
+                    <rect key="frame" x="80.5" y="156.5" width="51" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCj-Ip-hEk">
-                    <rect key="frame" x="280.5" y="156.5" width="51" height="15"/>
+                    <rect key="frame" x="280.5" y="156.5" width="51" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Of Appworks School iOS batch 15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np4-Og-If8">
-                    <rect key="frame" x="88" y="228.5" width="238" height="15"/>
+                    <rect key="frame" x="88" y="228.5" width="238" height="14.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -54,6 +54,9 @@
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="Icons_24px_ListView"/>
+                    <connections>
+                        <action selector="tapAccountButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="3oA-pg-d8x"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0w-en-LO1">
                     <rect key="frame" x="85" y="126" width="42" height="26.5"/>
@@ -61,73 +64,98 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-bt-wfs">
-                    <rect key="frame" x="174.5" y="740" width="65" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="logout"/>
-                    <connections>
-                        <action selector="logout:" destination="iN0-l3-epB" eventType="touchUpInside" id="5r0-e3-Ye6"/>
-                    </connections>
-                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3bh-nG-iEI">
+                    <rect key="frame" x="0.0" y="374" width="414" height="488"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ndf-cU-OVi">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leo Wang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNO-OR-hYx">
-                    <rect key="frame" x="161.5" y="199" width="91.5" height="25.5"/>
+                    <rect key="frame" x="161" y="199" width="92" height="25.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzp-dd-xp6">
-                    <rect key="frame" x="145.5" y="791" width="123" height="31"/>
-                    <color key="tintColor" systemColor="systemPinkColor"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="long_login3" translatesAutoresizingMaskIntoConstraints="NO" id="5Jf-ZM-DcA">
+                    <rect key="frame" x="167" y="248" width="141.5" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AIY-cN-gVh"/>
+                        <constraint firstAttribute="width" secondItem="5Jf-ZM-DcA" secondAttribute="height" multiplier="1701:601" id="qR4-SA-26g"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q55-is-f87">
+                    <rect key="frame" x="16" y="303" width="382" height="31"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Delete Account"/>
+                    <buttonConfiguration key="configuration" style="plain" title="編輯個人資料"/>
                     <connections>
-                        <action selector="deleteAccount:" destination="iN0-l3-epB" eventType="touchUpInside" id="Qx9-Vh-m1b"/>
+                        <action selector="tapEditProfilebutton:" destination="iN0-l3-epB" eventType="touchUpInside" id="VkW-Dx-YBC"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link.icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GzB-Ts-3SI">
+                    <rect key="frame" x="257" y="203" width="20" height="16.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Wmy-PP-oNG"/>
+                        <constraint firstAttribute="width" constant="20" id="uFo-O0-fQo"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vKt-Up-aDA" firstAttribute="leading" secondItem="k0w-en-LO1" secondAttribute="trailing" constant="40" id="0lm-Zx-mrR"/>
+                <constraint firstItem="3bh-nG-iEI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0uZ-3V-i6n"/>
                 <constraint firstItem="fCj-Ip-hEk" firstAttribute="top" secondItem="56w-ZK-bxw" secondAttribute="bottom" constant="4" id="4p3-H8-2cT"/>
+                <constraint firstItem="Q55-is-f87" firstAttribute="top" secondItem="5Jf-ZM-DcA" secondAttribute="bottom" constant="5" id="8rb-VI-bGn"/>
                 <constraint firstItem="56w-ZK-bxw" firstAttribute="leading" secondItem="vKt-Up-aDA" secondAttribute="trailing" constant="40" id="JVb-pI-qse"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Gzp-dd-xp6" secondAttribute="bottom" constant="40" id="KHh-bJ-jzJ"/>
                 <constraint firstItem="56w-ZK-bxw" firstAttribute="centerY" secondItem="vKt-Up-aDA" secondAttribute="centerY" constant="-5" id="M7N-GX-8x4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3bh-nG-iEI" secondAttribute="bottom" id="PmE-J1-YTQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Q55-is-f87" secondAttribute="trailing" constant="16" id="RhG-Bn-05x"/>
                 <constraint firstItem="wYK-zi-Wkm" firstAttribute="centerX" secondItem="k0w-en-LO1" secondAttribute="centerX" id="Ryw-4D-VDo"/>
+                <constraint firstItem="5Jf-ZM-DcA" firstAttribute="leading" secondItem="vKt-Up-aDA" secondAttribute="leading" id="S1T-3n-lPu"/>
                 <constraint firstAttribute="trailing" secondItem="OMd-Mq-0Yz" secondAttribute="trailing" id="VWi-IW-yZW"/>
                 <constraint firstItem="fCj-Ip-hEk" firstAttribute="centerX" secondItem="56w-ZK-bxw" secondAttribute="centerX" id="Wvp-A3-YiP"/>
                 <constraint firstItem="np4-Og-If8" firstAttribute="centerX" secondItem="vKt-Up-aDA" secondAttribute="centerX" id="XQQ-c9-Lgw"/>
                 <constraint firstItem="OMd-Mq-0Yz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Yba-px-I46"/>
-                <constraint firstItem="Gzp-dd-xp6" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="fdM-rI-V0t"/>
+                <constraint firstItem="Q55-is-f87" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="b7i-8J-Ci4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3bh-nG-iEI" secondAttribute="trailing" id="d0E-D9-fpy"/>
+                <constraint firstItem="3bh-nG-iEI" firstAttribute="top" secondItem="Q55-is-f87" secondAttribute="bottom" constant="40" id="dBi-zh-YNn"/>
+                <constraint firstItem="GzB-Ts-3SI" firstAttribute="centerY" secondItem="SNO-OR-hYx" secondAttribute="centerY" id="evf-7C-mtz"/>
+                <constraint firstItem="5Jf-ZM-DcA" firstAttribute="top" secondItem="np4-Og-If8" secondAttribute="bottom" constant="5" id="fIY-uY-bJr"/>
                 <constraint firstItem="k0w-en-LO1" firstAttribute="centerY" secondItem="vKt-Up-aDA" secondAttribute="centerY" constant="-5" id="g2v-HO-d5o"/>
-                <constraint firstItem="SNO-OR-hYx" firstAttribute="top" secondItem="vKt-Up-aDA" secondAttribute="bottom" constant="15" id="gM7-y1-GrU"/>
-                <constraint firstItem="Gzp-dd-xp6" firstAttribute="top" secondItem="6UT-bt-wfs" secondAttribute="bottom" constant="20" id="l1t-Q9-q6R"/>
+                <constraint firstItem="np4-Og-If8" firstAttribute="top" secondItem="SNO-OR-hYx" secondAttribute="bottom" constant="4" id="hHy-Gp-bEl"/>
+                <constraint firstItem="SNO-OR-hYx" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="iRD-7N-nhI"/>
+                <constraint firstItem="SNO-OR-hYx" firstAttribute="top" secondItem="vKt-Up-aDA" secondAttribute="bottom" constant="15" id="m6f-of-fTm"/>
                 <constraint firstItem="vKt-Up-aDA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="60" id="nMq-Mo-5be"/>
                 <constraint firstItem="vKt-Up-aDA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="skh-eX-VGU"/>
-                <constraint firstItem="6UT-bt-wfs" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="svY-dX-xv3"/>
                 <constraint firstItem="wYK-zi-Wkm" firstAttribute="top" secondItem="k0w-en-LO1" secondAttribute="bottom" constant="4" id="sxD-U9-0kp"/>
-                <constraint firstItem="np4-Og-If8" firstAttribute="top" secondItem="SNO-OR-hYx" secondAttribute="bottom" constant="4" id="uIj-Nu-1Hw"/>
-                <constraint firstItem="SNO-OR-hYx" firstAttribute="centerX" secondItem="vKt-Up-aDA" secondAttribute="centerX" id="vUF-ea-Hr9"/>
+                <constraint firstItem="GzB-Ts-3SI" firstAttribute="leading" secondItem="SNO-OR-hYx" secondAttribute="trailing" constant="4" id="ue0-ig-fPo"/>
             </constraints>
             <connections>
+                <outlet property="badgeImageView" destination="5Jf-ZM-DcA" id="O0d-xd-EHr"/>
                 <outlet property="bioLabel" destination="np4-Og-If8" id="ik2-Nx-Ajm"/>
+                <outlet property="collectionView" destination="3bh-nG-iEI" id="wwG-xy-vXy"/>
+                <outlet property="editProfileButton" destination="Q55-is-f87" id="Gdj-ge-Zvw"/>
                 <outlet property="follwersCountLabel" destination="k0w-en-LO1" id="qoR-JP-SoP"/>
                 <outlet property="follwingCountLabel" destination="56w-ZK-bxw" id="FSV-9v-vqH"/>
-                <outlet property="logoutLabel" destination="6UT-bt-wfs" id="45K-zq-0US"/>
                 <outlet property="mainImageView" destination="vKt-Up-aDA" id="CwG-QQ-f5l"/>
                 <outlet property="nameLabel" destination="SNO-OR-hYx" id="SI9-ui-pp5"/>
+                <outlet property="tapAccountButton" destination="OMd-Mq-0Yz" id="jcU-Bn-EvD"/>
+                <outlet property="webLikeImageView" destination="GzB-Ts-3SI" id="EGH-yV-aEZ"/>
             </connections>
-            <point key="canvasLocation" x="132" y="80"/>
+            <point key="canvasLocation" x="-93" y="72"/>
         </view>
     </objects>
     <resources>
         <image name="001" width="940" height="650"/>
         <image name="Icons_24px_ListView" width="24" height="24"/>
+        <image name="link.icloud.fill" catalog="system" width="128" height="88"/>
+        <image name="long_login3" width="1701" height="601"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

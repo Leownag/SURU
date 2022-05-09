@@ -14,10 +14,14 @@ protocol LiquidViewDelegate: AnyObject {
 protocol LiquidViewDrawValueDelegate: AnyObject {
     func didGetSelectionValue(view: LiquidBarViewController, type: SelectionType, value: Double)
 }
+protocol LiquidBarViewControllerTOValue: AnyObject {
+    func didChangeValue(view: LiquidBarViewController, value: Double)
+}
 
 class LiquidBarViewController: UIViewController {
     let mask = CALayer()
     var selectionType: SelectionType?
+    weak var valueDelegate: LiquidBarViewControllerTOValue?
     weak var delegate: LiquidViewDelegate?
     weak var drawDelegate: LiquidViewDelegate?
     override func viewDidLoad() {
@@ -49,12 +53,19 @@ class LiquidBarViewController: UIViewController {
             guard let positionY = controledView?.center.y, let positionX = controledView?.center.x else { return }
             let total = positionY + translation.y
             if total < 240 {
+                let selectionValue = Double((total - 720) / -48).ceiling(toDecimal: 1)
+                self.valueDelegate?.didChangeValue(view: self, value: selectionValue)
                 controledView?.center = CGPoint(x: positionX, y: 240)
             } else if total > 680 {
+                let selectionValue = Double((total - 720) / -48).ceiling(toDecimal: 1)
+                self.valueDelegate?.didChangeValue(view: self, value: selectionValue)
                 controledView?.center = CGPoint(x: positionX, y: 600)
             } else {
+                let selectionValue = Double((total - 720) / -48).ceiling(toDecimal: 1)
+                self.valueDelegate?.didChangeValue(view: self, value: selectionValue)
                 controledView?.center = CGPoint(x: positionX, y: total)
             }
+            
             sender.setTranslation(CGPoint.zero, in: view)
         case .ended:
             guard let positionY = controledView?.center.y, let selectionType = selectionType else { return }

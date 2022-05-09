@@ -30,6 +30,7 @@ class WriteCommentView: UIView {
         commentData = comment
         storename = name
         setTextView(textBox: contentTextView)
+        contentTextView.text = "| 店家： \(storename!)\n| 時間 ：2022/5/9\n| 品項 ：\(commentData!.meal)\n| 配置 ：\n| 評論：\n"
     }
     
     private func setTextView(textBox: UITextView) {
