@@ -11,9 +11,9 @@ protocol CommentDraggingViewDelegate: AnyObject {
     func didTapBackButton(vc: DragingValueViewController)
 }
 enum SelectionType: String {
-    case noodle = "麵條喜好度："
-    case soup = "湯頭喜好度："
-    case happy = "整體好感："
+    case noodle = "麵條喜好度"
+    case soup = "湯頭喜好度"
+    case happy = "幸福感"
 }
 enum SelectionSubTitle: String {
     case text = "拖曳後記得按下儲存"
@@ -23,7 +23,6 @@ class DragingValueViewController: UIViewController {
     weak var delegate: CommentDraggingViewDelegate?
     let titleLabel = UILabel()
     let subTitleLabel = UILabel()
-    let valueLabel = UILabel()
     let liquilBarview = LiquidBarViewController()
     var selectionType: SelectionType = .noodle
     
@@ -43,7 +42,6 @@ class DragingValueViewController: UIViewController {
         titleLabel.font = UIFont.regular(size: 30)
         titleLabel.characterSpacing = 2.5
         titleLabel.textColor = UIColor.B1
-        
         subTitleLabel.font = UIFont.regular(size: 18)
         subTitleLabel.characterSpacing = 2.5
         subTitleLabel.textColor = UIColor.B2
@@ -53,12 +51,7 @@ class DragingValueViewController: UIViewController {
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leadingAnchor.constraint(equalTo: liquilBarview.view.leadingAnchor, constant: 0).isActive = true
         titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: spacing).isActive = true
-        self.view.addSubview(valueLabel)
-        valueLabel.translatesAutoresizingMaskIntoConstraints = false
-        valueLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5).isActive = true
-        valueLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
-        valueLabel.font = .medium(size: 20)
-        valueLabel.text = String(5.0)
+        
         subTitleLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: 0).isActive = true
         subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
         //        subTitleLabel.text = SelectionSubTitle.text.rawValue
@@ -97,7 +90,6 @@ class DragingValueViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
     }
     
     func setLiquidView() {
@@ -106,7 +98,6 @@ class DragingValueViewController: UIViewController {
         liquilBarview.setLottieView(selectionType)
         liquilBarview.view.translatesAutoresizingMaskIntoConstraints = false
         liquilBarview.view.layer.cornerRadius = 40
-        liquilBarview.valueDelegate = self
         liquilBarview.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -UIScreen.height/10).isActive = true
         liquilBarview.view.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 50).isActive = true
         liquilBarview.view.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -136,13 +127,5 @@ class DragingValueViewController: UIViewController {
     @objc func dismissSelf() {
         self.delegate?.didTapBackButton(vc: self)
     }
-}
-extension DragingValueViewController: LiquidBarViewControllerTOValue {
-    func didChangeValue(view: LiquidBarViewController, value: Double) {
-        valueLabel.text = String(value)
-    }
-    
-    
-    
 }
 

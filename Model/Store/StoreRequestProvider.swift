@@ -6,7 +6,6 @@
 //
 
 import Firebase
-import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class StoreRequestProvider {
@@ -43,66 +42,5 @@ class StoreRequestProvider {
             completion(.failure(error))
         }
         completion(.success(docment.documentID))
-    }
-    
-    func collectStore(currentUserID: String, tagertStoreID: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let tagertStoreDocment = database.collection("stores").document(tagertStoreID)
-        let currentUserDocment = database.collection("accounts").document(currentUserID)
-        
-        tagertStoreDocment.updateData([
-            "collectedUser": FieldValue.arrayUnion([currentUserID])
-        ])
-        currentUserDocment.updateData([
-            "collectedStore": FieldValue.arrayUnion([tagertStoreID])
-        ]) { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success("已收藏"))
-            }
-        }
-    }
-    
-    func unCollectStore(currentUserID: String, tagertStoreID: String, completion: @escaping (Result<String, Error>) -> Void) {
-        
-        
-        let tagertStoreDocment = database.collection("stores").document(tagertStoreID)
-        let currentUserDocment = database.collection("accounts").document(currentUserID)
-        
-        tagertStoreDocment.updateData([
-            "collectedUser": FieldValue.arrayRemove([currentUserID])
-        ])
-        currentUserDocment.updateData([
-            "collectedStore": FieldValue.arrayRemove([tagertStoreID])
-        ]) { error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success("已取消收藏"))
-            }
-        }
-    }
-    func listenStore(completion: @escaping () -> Void) {
-        // [START listen_document]
-        database.collection("stores").addSnapshotListener { querySnapshot, error in
-            guard let snapshot = querySnapshot else {
-                print("Error fetching snapshots: \(error!)")
-                return
-            }
-            snapshot.documentChanges.forEach { diff in
-                if (diff.type == .added) {
-                    print("New city: \(diff.document.data())")
-                    completion()
-                }
-                if (diff.type == .modified) {
-                    print("Modified city: \(diff.document.data())")
-                    completion()
-                }
-                if (diff.type == .removed) {
-                    print("Removed city: \(diff.document.data())")
-                    completion()
-                }
-            }
-        }
     }
 }

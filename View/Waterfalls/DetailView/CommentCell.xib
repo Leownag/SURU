@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O5D-FW-IcB">
-                        <rect key="frame" x="40" y="512.5" width="166" height="50"/>
+                        <rect key="frame" x="228" y="400" width="166" height="50"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gu9-LG-MRr">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -72,39 +72,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbZ-mp-HW2">
-                        <rect key="frame" x="101" y="527.5" width="44.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXq-SX-NTq">
-                        <rect key="frame" x="159" y="527.5" width="44.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ou-xu-UL3">
-                        <rect key="frame" x="43" y="527.5" width="44.5" height="20.5"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Klr-QA-is8" firstAttribute="top" secondItem="Tgo-oM-hFK" secondAttribute="bottom" constant="15" id="8eb-OB-Hzg"/>
-                    <constraint firstItem="O5D-FW-IcB" firstAttribute="leading" secondItem="7r2-vi-6aY" secondAttribute="leadingMargin" constant="20" id="EgI-qN-0SQ"/>
-                    <constraint firstItem="MXq-SX-NTq" firstAttribute="centerX" secondItem="0ob-T7-eYI" secondAttribute="centerX" id="Krn-7i-PML"/>
-                    <constraint firstItem="5Ou-xu-UL3" firstAttribute="centerY" secondItem="Gu9-LG-MRr" secondAttribute="centerY" id="Ljp-Bi-HTd"/>
-                    <constraint firstItem="sbZ-mp-HW2" firstAttribute="centerX" secondItem="snz-wW-eYH" secondAttribute="centerX" id="MKc-OQ-OLq"/>
-                    <constraint firstItem="sbZ-mp-HW2" firstAttribute="centerY" secondItem="snz-wW-eYH" secondAttribute="centerY" id="N3a-rU-jOo"/>
-                    <constraint firstItem="O5D-FW-IcB" firstAttribute="top" secondItem="FyV-Jx-5vQ" secondAttribute="bottom" constant="10" id="P8W-CY-nMF"/>
                     <constraint firstItem="FyV-Jx-5vQ" firstAttribute="top" secondItem="oxu-Ha-eY1" secondAttribute="bottom" constant="20" id="QNI-M7-fp7"/>
                     <constraint firstAttribute="trailingMargin" secondItem="FyV-Jx-5vQ" secondAttribute="trailing" constant="10" id="WMj-7B-tra"/>
                     <constraint firstItem="oxu-Ha-eY1" firstAttribute="leading" secondItem="7r2-vi-6aY" secondAttribute="leadingMargin" constant="10" id="YRf-I6-FrP"/>
                     <constraint firstItem="Tgo-oM-hFK" firstAttribute="leading" secondItem="7r2-vi-6aY" secondAttribute="leadingMargin" id="Z9k-oD-jhY"/>
-                    <constraint firstItem="MXq-SX-NTq" firstAttribute="centerY" secondItem="0ob-T7-eYI" secondAttribute="centerY" id="ZPB-ic-fN3"/>
-                    <constraint firstItem="5Ou-xu-UL3" firstAttribute="centerX" secondItem="Gu9-LG-MRr" secondAttribute="centerX" id="kpn-Ef-9rP"/>
+                    <constraint firstItem="O5D-FW-IcB" firstAttribute="top" secondItem="Tgo-oM-hFK" secondAttribute="bottom" constant="15" id="ZBp-jC-Eyf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="O5D-FW-IcB" secondAttribute="trailing" id="cNb-X0-gOw"/>
                     <constraint firstItem="Tgo-oM-hFK" firstAttribute="top" secondItem="7r2-vi-6aY" secondAttribute="topMargin" id="lln-n2-tEH"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Tgo-oM-hFK" secondAttribute="trailing" id="oXz-kJ-VoY"/>
                     <constraint firstItem="Klr-QA-is8" firstAttribute="leading" secondItem="7r2-vi-6aY" secondAttribute="leadingMargin" constant="10" id="v93-Rh-l7U"/>
@@ -117,10 +93,7 @@
                 <outlet property="happyValueView" destination="0ob-T7-eYI" id="XV3-kS-fx2"/>
                 <outlet property="mainImageView" destination="Tgo-oM-hFK" id="m9o-H3-mlO"/>
                 <outlet property="mealLabel" destination="oxu-Ha-eY1" id="ULp-a5-WAn"/>
-                <outlet property="noodleLabel" destination="sbZ-mp-HW2" id="tqn-Yn-05L"/>
                 <outlet property="noodleValueView" destination="Gu9-LG-MRr" id="Lb6-g4-9ur"/>
-                <outlet property="oveallLabel" destination="MXq-SX-NTq" id="6Uk-V1-fOb"/>
-                <outlet property="soupLabel" destination="5Ou-xu-UL3" id="Wv0-QK-zYM"/>
                 <outlet property="soupValueView" destination="snz-wW-eYH" id="jhR-h1-mlb"/>
                 <outlet property="storeNameLabel" destination="Klr-QA-is8" id="0TI-q2-FYN"/>
             </connections>

@@ -53,6 +53,7 @@ extension SignInAndOutViewController {
       authorizationController.presentationContextProvider = self
       authorizationController.performRequests()
     }
+    
     private func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
         let charset: [Character] =
@@ -115,16 +116,15 @@ extension SignInAndOutViewController: ASAuthorizationControllerDelegate, ASAutho
       let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                 idToken: idTokenString,
                                                 rawNonce: nonce)
-        UserRequestProvider.shared.appleLogin(credential: credential) { result in
-            switch result {
-            case .failure(let error):
-                print("apple登入失敗", error)
-                LKProgressHUD.showFailure(text: "登入失敗")
-            case .success(let message):
-                LKProgressHUD.showSuccess(text: message)
-                print("apple登入成功", message)
-            }
+      Auth.auth().signIn(with: credential) { (authResult, error) in
+        if let error = error {
+          print(error)
+          return
         }
+          if let user = authResult?.user {
+              print("Login success ID as Doc ID is ", user.uid, user.email)
+          }
+      }
     }
   }
   func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
@@ -195,6 +195,7 @@ extension SignInAndOutViewController: SignInAndOutViewDelegate {
     func initInfoView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let controller = storyboard.instantiateViewController(withIdentifier: "SignInAndOutViewController") as? SignInAndOutViewController else { return }
+//        controller.pageState = state
         controller.layoutSignView()
         if #available(iOS 15.0, *) {
             if let sheet = controller.sheetPresentationController {

@@ -33,11 +33,13 @@ protocol CommentSelectionViewDelegate: AnyObject {
 // 素材名稱
 enum SelectionButton: String {
     case addPicture = "addMedia"
+    
     case selectNoodle = "noodle"
     case selectSoup = "water"
     case selectHappy = "thumb"
     case writeComment = "writeComment"
     case notWriteComment = "notwriteComment"
+    
     case saveCommentToDraft = "draftmark"
     case downloadPicture = "download"
     case backToCommentPage = "back"
@@ -86,6 +88,7 @@ class CommentSelectionView: UIView {
         selectedStoreTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
         selectedStoreTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
         selectedStoreTextField.inputView = storePickerView
+        
         
         
         self.addSubview(selectedMealTextField)
