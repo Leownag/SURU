@@ -10,6 +10,7 @@ import Kingfisher
 import MapKit
 protocol CommentStoreCellDelegate: AnyObject {
     func didTapCollectStore(_ view: CommentStoreCell, storeID: String)
+    
 }
 class CommentStoreCell: UITableViewCell {
     weak var delegate: CommentStoreCellDelegate?

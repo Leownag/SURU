@@ -562,9 +562,7 @@ extension MappingViewController {
         reportView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         reportView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         reportView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        UIView.animate(withDuration: 0.6) {
-            self.view.layoutIfNeeded()
-        }
+        
     }
     private func pulishQueue(queue: Int) {
         let storeID = storeData[selectedIndex].storeID

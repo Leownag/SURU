@@ -153,18 +153,27 @@ extension FollowViewController: CHTCollectionViewDelegateWaterfallLayout {
 //            return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 270)
 //        }
         let account = accountData.first(where: {$0.userID == comment.userID})?.badgeStatus ?? ""
+//        if text.count > 12 {
+//            if account != "" {
+//                return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 335)
+//            } else {
+//                return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 300)
+//            }
+//        } else {
+//            if account != "" {
+//                return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 305)
+//            } else {
+//                return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 270)
+//            }
+//        }
         if text.count > 12 {
-            if account != "" {
+            
                 return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 335)
-            } else {
-                return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 300)
-            }
+            
         } else {
-            if account != "" {
+            
                 return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 305)
-            } else {
-                return CGSize(width: (UIScreen.width - 10 * 3) / 2, height: 270)
-            }
+            
         }
     }
 }
