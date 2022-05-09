@@ -50,7 +50,7 @@ class StoreCardCell: UICollectionViewCell {
         self.cornerForAll(radii: 10)
         self.nameLabel.text = dataSource.name
         self.localtionAreaLabel.text = dataSource.area
-        let weekday = Date().weekDay()
+        let weekday =  getTodayWeekDay()
         switch weekday {
         case "sun" :
             self.lunchLabel.text = "本日營業時間 中午: \(dataSource.opentime.sun.lunch)"
@@ -76,30 +76,36 @@ class StoreCardCell: UICollectionViewCell {
         default:
             return
         }
-        if !commentData.isEmpty {
+//        var total: Double = 0
+//        for data in commentData {
+//            let value = (data.contentValue.happiness + data.contentValue.soup + data.contentValue.noodle)/3
+//            total += value
+//        }
+        if commentData.count > 0 {
             var total: Double = 0
             for data in commentData {
-                let value = (data.contentValue.happiness + data.contentValue.soup + data.contentValue.noodle) / 3
+                let value = (data.contentValue.happiness + data.contentValue.soup + data.contentValue.noodle)/3
                 total += value
             }
-            ratingCountLabel.text = "\(commentData.count) reviews"
-            avgRatingView.rating = total / Double(commentData.count)
+        ratingCountLabel.text = "\(commentData.count) reviews"
+            avgRatingView.rating = total/Double(commentData.count)
         } else {
             ratingCountLabel.text = "no review"
             avgRatingView.rating = 0
         }
-        //        avgRatingView.rating = total/Double(commentData.count)
-        let kilometer = Double(distance / 1000).ceiling(toDecimal: 1)
+//        avgRatingView.rating = total/Double(commentData.count)
+        let kilometer = Double(distance/1000).ceiling(toDecimal: 1)
         self.distanceLabel.text = String("\(kilometer) 公里")
         if !commentData.isEmpty {
-            leftImageView.kf.setImage(with: URL(string: commentData[0].mainImage))
+            leftImageView.kf.setImage(with: URL(string: commentData.first!.mainImage))
         }
-        
+       
     }
-//    func getTodayWeekDay() -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "EEE"
-//        let weekDay = dateFormatter.string(from: Date()).lowercased()
-//        return weekDay
-//    }
+    func getTodayWeekDay()-> String {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "EEE"
+        let weekDay = dateFormatter.string(from: Date()).lowercased()
+           return weekDay
+     }
+
 }

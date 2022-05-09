@@ -14,22 +14,17 @@ class DetailViewController: UIViewController {
     var comment: Comment?
     var store: Store?
 //    var name: String?
-    var timer = 0
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
-    @IBAction func tapFollowButton(_ sender: UIButton) {
-        if timer == 0 {
-            guard let userID = UserRequestProvider.shared.currentUserID else { return }
-            guard let targetID = account?.userID else { return }
-            timer = 1
-            AccountRequestProvider.shared.followAccount(currentUserID: userID, tagertUserID: targetID)
-        } else {
-            guard let userID = UserRequestProvider.shared.currentUserID else { return }
-            guard let targetID = account?.userID else { return }
-            timer = 0
-            AccountRequestProvider.shared.unfollowAccount(currentUserID: userID, tagertUserID: targetID)
+    @IBAction func tapFollowButton(_ sender: Any) {
+        let alert = UIAlertController(title: "提示", message: "已追蹤用戶： \(account!.name)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "好", style: .default) { _ in
+           print("去個人頁面")
         }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     @IBAction func tapBackButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -83,6 +78,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CommentStoreCell.self), for: indexPath) as? CommentStoreCell else { return UITableViewCell() }
             cell.layoutCell(store: storeData)
             cell.delegate = self
+            
             return cell
         }
     }
@@ -91,13 +87,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 }
 extension DetailViewController: CommentStoreCellDelegate {
     func didTapCollectStore(_ view: CommentStoreCell, storeID: String) {
-        guard let currentUserID = UserRequestProvider.shared.currentUserID else {
-            LKProgressHUD.showFailure(text: "你沒有登入喔")
-            return
+//        LKProgressHUD.showSuccess(text: "已收藏")
+        let alert = UIAlertController(title: "提示", message: "已收藏店家： \(store!.name)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "好", style: .default) { _ in
+           print("去個人頁面")
         }
-//        StoreRequestProvider.shared.collectStore(currentUserID: currentUserID, tagertStoreID: storeID)
-        LKProgressHUD.showSuccess(text: "已收藏")
-        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     

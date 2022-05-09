@@ -9,36 +9,27 @@ import UIKit
 import Kingfisher
 
 protocol DiscoveryCellDelegate: AnyObject {
-    func didTapLikeButton(_ view: DiscoveryCell, comment: Comment)
-    
-    func didTapUnLikeButton(_ view: DiscoveryCell, comment: Comment)
+    func didTapLikeButton(_ view: DiscoveryCell)
 }
 
 class DiscoveryCell: UICollectionViewCell {
     weak var delegate: DiscoveryCellDelegate?
-    var commentHolder: Comment?
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBAction func tapLikeButton(_ sender: UIButton) {
-        guard let commentHolder = commentHolder else {
-            return
-        }
-
         if likeButton.tintColor == .systemRed {
-            self.delegate?.didTapUnLikeButton(self, comment: commentHolder)
+            likeButton.tintColor = .B5
         } else {
             likeButton.tintColor = .systemRed
-            self.delegate?.didTapLikeButton(self, comment: commentHolder)
         }
-        
+        self.delegate?.didTapLikeButton(self)
     }
     
     
     func layoutCell(author: Account, comment: Comment, currentUser: Account, store: Store) {
-        commentHolder = comment
         mainImageView.kf.setImage(with: URL(string: comment.mainImage))
             nameLabel.text = "\(store.name) -\n\(comment.meal)"
             authorImageView.kf.setImage(with: URL(string: author.mainImage))

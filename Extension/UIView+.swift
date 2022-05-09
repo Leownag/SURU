@@ -22,16 +22,6 @@ extension UIView {
         maskLayer.path = maskPath.cgPath
         self.layer.mask = maskLayer
     }
-    func makeShadow(shadowOpacity: Float? = 0.4, shadowRadius: CGFloat? = 15, color: CGColor? = UIColor.black.cgColor) {
-        guard let shadowRadius = shadowRadius, let shadowOpacity = shadowOpacity else {
-            return
-        }
-        self.layer.shadowColor = color
-        self.layer.shadowOpacity = shadowOpacity
-        self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = shadowRadius
-        self.layer.rasterizationScale = UIScreen.main.scale
-    }
     func cornerForAll(radii: CGFloat) {
         corner(byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], radii: radii)
     }
@@ -73,7 +63,7 @@ extension UIView {
     }
     
         enum GlowEffect: Float {
-            case small = 15, normal = 20, mid = 25, big = 30
+            case small = 0.4, normal = 2, mid = 15, big = 30
         }
 
         func doGlowAnimation(withColor color: UIColor, withEffect effect: GlowEffect = .normal) {
