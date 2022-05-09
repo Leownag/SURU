@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         view.stickSubView(welcomeView)
         welcomeView.delegate = self
+        // Do any additional setup after loading the view.
     }
     
     func initSignView(state: SignPageState) {
@@ -24,18 +25,23 @@ class WelcomeViewController: UIViewController {
         controller.layoutSignView()
         if #available(iOS 15.0, *) {
             if let sheet = controller.sheetPresentationController {
-                sheet.detents = [.medium()]
+                       sheet.detents = [.medium()]
                 sheet.preferredCornerRadius = 20
                 
             }
         }
-        self.present(controller, animated: true, completion: nil)
+            // Below iOS 15, change frame here
+            self.present(controller, animated: true, completion: nil)
+        
+        
     }
 }
 
 extension WelcomeViewController: WelcomeViewDelegate {
     func didTapSignUp(_ view: WelcomeView) {
+        
         initSignView(state: .sighUp)
+        
     }
     
     func didTapLogIn(_ view: WelcomeView) {

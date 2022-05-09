@@ -15,6 +15,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var createTimeLabel: UILabel!
+    
     @IBOutlet weak var noodleValueView: UIView!
     @IBOutlet weak var soupValueView: UIView!
     @IBOutlet weak var happyValueView: UIView!
@@ -50,12 +51,14 @@ class CommentTableViewCell: UITableViewCell {
             )
             roundView.backgroundColor = .B5
             roundView.layer.cornerRadius = roundView.frame.size.width / 2
-     
+            
+            // bezier path
             let circlePath = UIBezierPath(arcCenter: CGPoint (x: roundView.frame.size.width / 2, y: roundView.frame.size.height / 2),
                                           radius: roundView.frame.size.width / 2,
                                           startAngle: CGFloat(-0.5 * .pi),
                                           endAngle: CGFloat(1.5 * .pi),
                                           clockwise: true)
+            // circle shape
             let circleShape = CAShapeLayer()
             circleShape.path = circlePath.cgPath
             circleShape.strokeColor = color

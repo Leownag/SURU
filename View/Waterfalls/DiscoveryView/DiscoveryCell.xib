@@ -24,72 +24,67 @@
                             <constraint firstAttribute="width" secondItem="dQx-vz-3NO" secondAttribute="height" multiplier="1:1" id="3ui-Fu-GKV"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pXG-Ly-mGy">
-                        <rect key="frame" x="10" y="210" width="190" height="85"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pXG-Ly-mGy">
+                        <rect key="frame" x="10" y="210" width="180" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXXXX拉麵店-XXXX" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5L-FZ-lcJ">
-                                <rect key="frame" x="0.0" y="0.0" width="124" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="z0D-ZI-096">
-                                <rect key="frame" x="0.0" y="8" width="107.5" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0U-q0-26e">
+                                <rect key="frame" x="0.0" y="60" width="180" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DDD" translatesAutoresizingMaskIntoConstraints="NO" id="QFB-sU-Udu">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="dFg-pj-i9P"/>
-                                            <constraint firstAttribute="width" constant="30" id="ifY-sG-BMK"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我叫XXXXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbo-pj-MN3">
-                                        <rect key="frame" x="34" y="0.0" width="73.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="z0D-ZI-096">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="20"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DDD" translatesAutoresizingMaskIntoConstraints="NO" id="QFB-sU-Udu">
+                                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="dFg-pj-i9P"/>
+                                                    <constraint firstAttribute="width" constant="20" id="ifY-sG-BMK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我叫XXXXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbo-pj-MN3">
+                                                <rect key="frame" x="24" y="0.0" width="156" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdq-za-kpW">
-                                <rect key="frame" x="0.0" y="46" width="110.5" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="jdq-za-kpW" secondAttribute="height" multiplier="1701:601" id="Wrq-Yj-xot"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="jdq-za-kpW" firstAttribute="height" secondItem="QFB-sU-Udu" secondAttribute="height" multiplier="1.3" id="bvJ-EA-rlT"/>
-                        </constraints>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHh-j2-Rqf">
-                        <rect key="frame" x="121" y="264" width="69" height="31"/>
-                        <color key="tintColor" name="B1"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system" title="123"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeQ-Cw-ebz">
+                        <rect key="frame" x="174.5" y="269" width="20.5" height="22"/>
+                        <color key="tintColor" name="B5"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="heart.fill" catalog="system"/>
                         <connections>
-                            <action selector="tapLikeButton:" destination="BJV-fz-jei" eventType="touchUpInside" id="BHD-aZ-Ipo"/>
+                            <action selector="tapLikeButton:" destination="BJV-fz-jei" eventType="touchUpInside" id="Kv1-vU-cTt"/>
                         </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="KeQ-Cw-ebz" secondAttribute="trailing" constant="5" id="8gb-tl-e8Z"/>
                     <constraint firstAttribute="trailing" secondItem="dQx-vz-3NO" secondAttribute="trailing" id="9UQ-cx-7Bt"/>
                     <constraint firstItem="dQx-vz-3NO" firstAttribute="top" secondItem="ZsX-uH-617" secondAttribute="top" id="BCh-qk-8mW"/>
-                    <constraint firstAttribute="trailing" secondItem="pXG-Ly-mGy" secondAttribute="trailing" id="TuL-L2-N3c"/>
-                    <constraint firstAttribute="bottom" secondItem="CHh-j2-Rqf" secondAttribute="bottom" constant="5" id="ZyN-Uj-1Eh"/>
-                    <constraint firstAttribute="trailing" secondItem="CHh-j2-Rqf" secondAttribute="trailing" constant="10" id="aA5-Ul-kdg"/>
+                    <constraint firstAttribute="trailing" secondItem="pXG-Ly-mGy" secondAttribute="trailing" constant="10" id="TuL-L2-N3c"/>
                     <constraint firstItem="dQx-vz-3NO" firstAttribute="leading" secondItem="ZsX-uH-617" secondAttribute="leading" id="dEQ-hf-DPt"/>
                     <constraint firstItem="pXG-Ly-mGy" firstAttribute="top" secondItem="dQx-vz-3NO" secondAttribute="bottom" constant="10" id="nLu-Ic-oOc"/>
-                    <constraint firstAttribute="bottom" secondItem="pXG-Ly-mGy" secondAttribute="bottom" constant="5" id="pJI-Li-rDg"/>
+                    <constraint firstAttribute="bottom" secondItem="pXG-Ly-mGy" secondAttribute="bottom" constant="10" id="pJI-Li-rDg"/>
+                    <constraint firstItem="KeQ-Cw-ebz" firstAttribute="centerY" secondItem="qbo-pj-MN3" secondAttribute="centerY" id="udX-hH-6yc"/>
                     <constraint firstItem="pXG-Ly-mGy" firstAttribute="leading" secondItem="ZsX-uH-617" secondAttribute="leading" constant="10" id="yEU-MZ-QvX"/>
                 </constraints>
             </collectionViewCellContentView>
             <connections>
                 <outlet property="authorImageView" destination="QFB-sU-Udu" id="3HN-D2-CDA"/>
                 <outlet property="authorNameLabel" destination="qbo-pj-MN3" id="LVr-tt-qAP"/>
-                <outlet property="badgeImageView" destination="jdq-za-kpW" id="q3O-aZ-GAB"/>
-                <outlet property="likeButton" destination="CHh-j2-Rqf" id="1H5-tk-6cc"/>
+                <outlet property="likeButton" destination="KeQ-Cw-ebz" id="EUd-CP-rwQ"/>
                 <outlet property="mainImageView" destination="dQx-vz-3NO" id="niL-0l-TnH"/>
                 <outlet property="nameLabel" destination="s5L-FZ-lcJ" id="ZBr-qj-Fes"/>
             </connections>
@@ -100,8 +95,8 @@
         <image name="D2256435-CD95-44BA-B841-2EC26739FF3D_1_105_c" width="1024" height="768"/>
         <image name="DDD" width="480" height="479"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <namedColor name="B1">
-            <color red="0.24699999392032623" green="0.22699999809265137" blue="0.22699999809265137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="B5">
+            <color red="0.87800002098083496" green="0.87800002098083496" blue="0.87800002098083496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

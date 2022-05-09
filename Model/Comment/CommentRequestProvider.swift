@@ -6,7 +6,6 @@
 //
 
 import Firebase
-import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class CommentRequestProvider {
@@ -67,40 +66,5 @@ class CommentRequestProvider {
             completion(.failure(error))
         }
         completion(.success(docment.documentID))
-    }
-    func    likeComment(currentUserID: String, tagertComment: Comment) {
-        let commentID = tagertComment.commentID
-        let authorID = tagertComment.userID
-        
-        let targetCommentDocment = database.collection("comments").document(commentID)
-        let currentUserDocment = database.collection("accounts").document(currentUserID)
-        let authorDocment = database.collection("accounts").document(authorID)
-        targetCommentDocment.updateData([
-            "likedUserList": FieldValue.arrayUnion([currentUserID])
-        ])
-        currentUserDocment.updateData([
-            "likedComment": FieldValue.arrayUnion([commentID])
-        ])
-        authorDocment.updateData([
-                    "myCommentLike": FieldValue.increment(Int64(1))
-                ])
-    }
-    
-    func unLikeComment(currentUserID: String, tagertComment: Comment) {
-        let commentID = tagertComment.commentID
-        let authorID = tagertComment.userID
-        
-        let targetCommentDocment = database.collection("comments").document(commentID)
-        let currentUserDocment = database.collection("accounts").document(currentUserID)
-        let authorDocment = database.collection("accounts").document(authorID)
-        targetCommentDocment.updateData([
-            "likedUserList": FieldValue.arrayRemove([currentUserID])
-        ])
-        currentUserDocment.updateData([
-            "likedComment": FieldValue.arrayRemove([commentID])
-        ])
-        authorDocment.updateData([
-                    "myCommentLike": FieldValue.increment(Int64(-1))
-                ])
     }
 }
